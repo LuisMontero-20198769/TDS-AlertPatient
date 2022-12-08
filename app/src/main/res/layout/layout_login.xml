@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:background="@drawable/img_7"
+    android:orientation="vertical"
+    android:padding="3dp"
+    tools:context=".Login">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30sp"
+        android:src="@drawable/fondo"
+        android:contentDescription="TODO" />
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/customer_edittext"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20sp"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/text_user"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginVertical="20dp"
+                android:background="@drawable/customer_edittext"
+                android:drawableLeft="@drawable/ic_name"
+                android:drawablePadding="8sp"
+                android:textColorHint="#F1876D"
+                android:hint="Usuario...."
+                android:padding="8sp"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/text_pass"
+                android:layout_width="match_parent"
+                android:layout_height="51sp"
+                android:background="@drawable/customer_edittext"
+                android:drawableLeft="@drawable/ic_pssperson"
+                android:ems="15"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:padding="8sp"
+                android:textColorHint="#F1876D"
+                tools:ignore="TextContrastCheck" />
+
+
+            <Button
+                android:id="@+id/btn_ingresar"
+                android:layout_width="200dp"
+                android:layout_height="65dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15sp"
+                android:backgroundTint="#f00"
+                android:drawableLeft="@drawable/ic_enter"
+                android:text="Ingresar"
+                android:textSize="15sp"
+                app:cornerRadius="30dp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:layout_gravity="center">
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btn_crearUser"
+                android:layout_width="160dp"
+                android:layout_height="65dp"
+                android:layout_gravity="center"
+                android:backgroundTint="#f00"
+                android:drawableLeft="@drawable/ic_addperson"
+                android:text="Crear Usuario"
+                app:cornerRadius="30dp" />
+
+            <Button
+                android:id="@+id/btn_salirLogin"
+                android:layout_width="160sp"
+                android:layout_height="65sp"
+                android:layout_marginLeft="20dp"
+                android:backgroundTint="#f00"
+                android:drawableEnd="@drawable/ic_salir"
+                android:text="@string/salir"
+                app:cornerRadius="30dp" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

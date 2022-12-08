@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_margin="3sp"
+    android:padding="8dp">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:paddingTop="5sp">
+       <ImageView
+           android:layout_width="150dp"
+           android:layout_height="130dp"
+           android:src="@drawable/img_3"/>
+
+       <ImageView
+           android:layout_width="150dp"
+           android:layout_height="130dp"
+           android:layout_marginLeft="50sp"
+           android:src="@drawable/fondo"/>
+
+   </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="8sp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre paciente:"
+            android:textStyle="bold"
+            android:padding="10sp"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/text_nombre"
+            android:layout_width="220dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="10sp"
+            android:background="@drawable/customer_edittext"
+            android:hint="Digite nombre......."
+            android:padding="7sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Telefono paciente:"
+            android:textStyle="bold"
+            android:padding="10sp"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/text_telefono"
+            android:layout_width="220dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="5sp"
+            android:background="@drawable/customer_edittext"
+            android:hint="Numero telefonico......."
+            android:inputType="phone"
+            android:padding="7sp"
+            tools:ignore="TouchTargetSizeCheck" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="30sp"
+        android:paddingTop="5sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="28sp"
+            android:text="Sufre de alguna enfermedad?"
+            android:textSize="15sp"
+            android:padding="5sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+
+        <CheckBox
+            android:id="@+id/CB_YES_ENF"
+            android:layout_width="wrap_content"
+            android:layout_height="28sp"
+            android:layout_gravity="left|center_horizontal"
+            android:layout_margin="5sp"
+            android:text="Si"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <CheckBox
+            android:id="@+id/CB_NO_ENF"
+            android:layout_width="wrap_content"
+            android:layout_height="28sp"
+            android:layout_gravity="right"
+            android:layout_margin="5sp"
+            android:text="No"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="28sp"
+        android:text="Cual es?"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:padding="5sp"
+        />
+
+    <EditText
+        android:id="@+id/enfermedad"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:background="@drawable/customer_edittext"
+        android:hint="Digite la enfermedad...."
+        android:padding="8sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="25sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="28sp"
+            android:text="Es alergico algun medicamento: "
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:padding="5sp"
+            android:textSize="15sp"/>
+
+        <CheckBox
+            android:id="@+id/CB_YES_ALERGIA"
+            android:layout_width="wrap_content"
+            android:layout_height="28sp"
+            android:layout_gravity="left|center_horizontal"
+            android:layout_margin="5sp"
+            android:text="Si"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <CheckBox
+            android:id="@+id/CB_NO_ALERGIA"
+            android:layout_width="wrap_content"
+            android:layout_height="28sp"
+            android:layout_gravity="right"
+            android:layout_margin="5sp"
+            android:text="No"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="28sp"
+        android:text="Cual es?"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:padding="5sp"
+        />
+
+    <EditText
+        android:id="@+id/alergia"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:background="@drawable/customer_edittext"
+        android:hint="Digite el medicamento...."
+        android:padding="8sp" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="28sp"
+        android:text="Cuales sintomas presenta?"
+        android:textSize="15sp"
+        android:padding="5sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        />
+
+
+    <EditText
+        android:id="@+id/descripcion_padecimiento"
+        android:layout_width="match_parent"
+        android:layout_height="70sp"
+        android:layout_margin="5sp"
+        android:background="@drawable/customer_edittext"
+        android:padding="8dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+            <Button
+                android:id="@+id/btn_cancelarC"
+                android:layout_width="170sp"
+                android:layout_height="65sp"
+                android:layout_margin="5sp"
+                app:cornerRadius="30dp"
+                android:text="Cancelar"
+                android:backgroundTint="#f00"
+                android:drawableLeft="@drawable/ic_cancelar"/>
+
+            <Button
+                android:id="@+id/btn_procesarC"
+                android:layout_width="170sp"
+                android:layout_height="65sp"
+                android:layout_margin="5sp"
+                app:cornerRadius="30dp"
+                android:text="Procesar"
+                android:backgroundTint="#f00"
+                android:drawableRight="@drawable/ic_send"/>
+    </LinearLayout>
+
+
+</LinearLayout>

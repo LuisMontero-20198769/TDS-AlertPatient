@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Alert Patient</string>
+    <string name="txt_salir">Salir</string>
+    <string name="digite_su_clave">Digite su clave.....</string>
+    <string name="digite_su_nombre">Digite su nombre....</string>
+    <string name="digite_su_correo">Digite su correo....</string>
+    <string name="digite_a_que_se_dedica">Digite a que se dedica....</string>
+    <string name="digite_su_edad">Digite su edad....</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="tipo_de_usuario">Tipo de usuario:</string>
+    <string name="salir">Salir</string>
+    <string name="password">Password...</string>
+    <string name="registrar_usuario">Registrar usuario</string>
+
+
+    <string-array name="usuarios_array">
+        <item>Doctor</item>
+        <item>Paciente</item>
+    </string-array>
+
+</resources>
