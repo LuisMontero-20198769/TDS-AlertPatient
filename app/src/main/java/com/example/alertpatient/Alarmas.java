@@ -95,4 +95,14 @@ public class Alarmas extends AppCompatActivity implements AdapterView.OnItemSele
 
 
     }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
 }
