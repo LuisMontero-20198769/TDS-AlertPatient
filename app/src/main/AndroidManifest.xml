@@ -25,15 +25,14 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name="com.example.alertpatient.Principal"
-            android:theme="@style/principal"/>
-        <activity android:name="com.example.alertpatient.Alarmas" />
-        <activity android:name="com.example.alertpatient.Consulta" />
-        <activity android:name="com.example.alertpatient.Emergencia" />
-        <activity android:name="com.example.alertpatient.Registro" />
-        <activity android:name="com.example.alertpatient.Medicamentos" />
-
-
+        <activity
+            android:name=".Principal"
+            android:theme="@style/principal" />
+        <activity android:name=".Alarmas" />
+        <activity android:name=".Consulta" />
+        <activity android:name=".Emergencia" />
+        <activity android:name=".Registro" />
+        <activity android:name=".Medicamentos" />
     </application>
 
 </manifest>

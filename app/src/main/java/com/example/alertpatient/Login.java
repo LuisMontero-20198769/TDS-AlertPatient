@@ -67,6 +67,7 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 Intent crear = new Intent(Login.this, Registro.class);
                 startActivity(crear);
+                finish();
             }
         });
 
