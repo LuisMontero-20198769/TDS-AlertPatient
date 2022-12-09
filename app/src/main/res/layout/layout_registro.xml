@@ -98,7 +98,7 @@
                 android:background="@drawable/customer_edittext"
                 android:drawableStart="@drawable/ic_tipouser"
                 android:drawablePadding="8sp"
-                android:hint="Digite el tipo usuario"
+                android:hint="Tipo: Paciente o Doctor"
                 android:inputType="text"
                 android:padding="8sp"
                 android:textColorHint="#EA9C89" />

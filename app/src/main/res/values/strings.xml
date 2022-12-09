@@ -13,20 +13,17 @@
     <string name="registrar_usuario">Registrar usuario</string>
 
 
-    <string-array name="usuarios_array">
-        <item>Doctor</item>
-        <item>Paciente</item>
+    <string-array name="stepbrothers_array">
+        <item>Elige un sonido</item>
+        <item>Cataline Wine Mixer</item>
+        <item>Inclement Weather</item>
+        <item>Lightning Bolt</item>
+        <item>Butt Buddy</item>
+        <item>Robert better not get in my face</item>
     </string-array>
-    <string name="title_activity_menu">menu</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="llamar_a_emergencias_911">Llamar a Emergencias (911):</string>
+    <string name="atras">Atras</string>
 
 </resources>

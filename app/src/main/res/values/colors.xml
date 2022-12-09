@@ -9,4 +9,7 @@
     <color name="amarillo">#CF9E0D</color>
     <color name="rojo">#D61313</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorTeban">#FF420042</color>
+
+
 </resources>
