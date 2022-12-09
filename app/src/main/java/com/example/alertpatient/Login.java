@@ -11,11 +11,15 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.alertpatient.DBSQLite.daoUsuario;
+
 public class Login extends AppCompatActivity {
 
     //Declaracion de los botones....
     Button btn_salir, btn_ingresar, btn_crearUser;
     //--------------
+
+    daoUsuario dao;
 
     //Las cajas de textos..........
     EditText user;
@@ -37,15 +41,25 @@ public class Login extends AppCompatActivity {
         pass = findViewById(R.id.text_pass);
         //---------------------
 
+        dao = new daoUsuario(this);
+
         //Llamado de boton ingresar....
         btn_ingresar.setOnClickListener(view -> {
-             if(user.getText().toString().equals("Luis") && pass.getText().toString().equals("12345")){
-                 Intent ingresar = new Intent(Login.this, Principal.class);
-                 startActivity(ingresar);
-             }else{
-                 //Mensaje de alert de fallo
-                 Toast.makeText(Login.this, "Login failed!", Toast.LENGTH_SHORT).show();
-             }
+             String u = user.getText().toString();
+             String p = pass.getText().toString();
+
+             //Validar campos vacios
+            if(u.equals("") && p.equals("")){
+                Toast.makeText(this, "Error: Campos Vacios!", Toast.LENGTH_SHORT).show();
+            } else if(dao.login(u, p) == 1){
+                Toast.makeText(this, "Bienvenido: "+dao.getUser(u, p).getNombre().toString(), Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(Login.this, Principal.class);
+                startActivity(i);
+                finish();
+            }else {
+                Toast.makeText(this, "Usuario Inexistente!", Toast.LENGTH_SHORT).show();
+            }
+
         });
 
         btn_crearUser.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +88,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         android.os.Process.killProcess(android.os.Process.myPid()); //Su funcion es algo similar a lo que se llama cuando se presiona el botón "Forzar Detención" o "Administrar aplicaciones", lo cuál mata la aplicación
-                        //finish(); Si solo quiere mandar la aplicación a segundo plano
+                        finish(); //cerrara esta actividad...
                     }
                 }).show();
     }

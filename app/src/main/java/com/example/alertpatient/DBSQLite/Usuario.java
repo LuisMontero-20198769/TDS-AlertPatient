@@ -3,15 +3,30 @@ package com.example.alertpatient.DBSQLite;
 public class Usuario {
 
     //Variable....
-    int id, edad;
-    String correo, nombre, ocupacion, t_user, pass;
+    int id;
+    String correo;
+    String nombre;
+    String ocupacion;
+    String t_user;
+    String pass;
+    String edad;
+    //----
+
 
     //Constructor sin parametros
     public Usuario(){}
 
+    public boolean isNull(){
+        if (correo.equals("") && nombre.equals("") && edad.equals("") && ocupacion.equals("") &&
+            t_user.equals("") && pass.equals("")) {
+             return false;
+        }else {
+            return true;
+        }
+    }
+
     //Constrcutor con parametros....
-    public Usuario(int id, int edad, String correo, String nombre, String ocupacion, String t_user, String pass) {
-        this.id = id;
+    public Usuario(String edad, String correo, String nombre, String ocupacion, String t_user, String pass) {
         this.edad = edad;
         this.correo = correo;
         this.nombre = nombre;
@@ -20,6 +35,18 @@ public class Usuario {
         this.pass = pass;
     }
 
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", edad=" + edad +
+                ", correo='" + correo + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", ocupacion='" + ocupacion + '\'' +
+                ", t_user='" + t_user + '\'' +
+                ", pass='" + pass + '\'' +
+                '}';
+    }
 
     //Metodos Getters y Setters
     public int getId() {
@@ -30,13 +57,9 @@ public class Usuario {
         this.id = id;
     }
 
-    public int getEdad() {
-        return edad;
-    }
+    public String getEdad() {return edad;}
 
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
+    public void setEdad(String edad) {this.edad = edad;}
 
     public String getCorreo() {
         return correo;

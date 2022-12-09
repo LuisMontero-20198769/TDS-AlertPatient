@@ -34,25 +34,25 @@
                 android:src="@drawable/icono_registro" />
 
             <EditText
-                android:id="@+id/txt_correo"
+                android:id="@+id/edit_correo"
                 android:layout_width="250sp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
-                android:layout_margin="5dp"
+                android:layout_margin="8dp"
                 android:background="@drawable/customer_edittext"
                 android:drawableLeft="@drawable/ic_correo"
                 android:drawablePadding="8dp"
                 android:hint="@string/digite_su_correo"
-                android:inputType="textEmailAddress"
+                android:inputType="text"
                 android:padding="8dp"
                 android:textColorHint="#EA9C89" />
 
             <EditText
-                android:id="@+id/txt_nombre"
+                android:id="@+id/edit_nombre"
                 android:layout_width="250sp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
-                android:layout_margin="5dp"
+                android:layout_margin="8dp"
                 android:background="@drawable/customer_edittext"
                 android:drawableLeft="@drawable/ic_name"
                 android:drawablePadding="8sp"
@@ -62,25 +62,25 @@
                 android:textColorHint="#EA9C89" />
 
             <EditText
-                android:id="@+id/txt_edad"
+                android:id="@+id/edit_edad"
                 android:layout_width="250sp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
-                android:layout_margin="5dp"
+                android:layout_margin="8dp"
                 android:background="@drawable/customer_edittext"
                 android:drawableStart="@drawable/ic_edad"
                 android:drawablePadding="8sp"
                 android:hint="@string/digite_su_edad"
-                android:inputType="number"
+                android:inputType="text"
                 android:padding="8sp"
                 android:textColorHint="#EA9C89" />
 
             <EditText
-                android:id="@+id/txt_profesion"
+                android:id="@+id/edit_profesion"
                 android:layout_width="250sp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
-                android:layout_margin="5dp"
+                android:layout_margin="8dp"
                 android:background="@drawable/customer_edittext"
                 android:drawableStart="@drawable/ic_trabajo"
                 android:drawablePadding="8sp"
@@ -89,37 +89,54 @@
                 android:padding="8sp"
                 android:textColorHint="#EA9C89" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="55sp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="27sp"
-                android:layout_marginRight="27sp"
-                android:orientation="horizontal">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/rojo"
-                    android:hint="@string/tipo_de_usuario"
-                    app:startIconDrawable="@drawable/ic_tipouser">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/Auto_Comp_TipoUsuario"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="none" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-
             <EditText
-                android:id="@+id/txt_pass"
+                android:id="@+id/edit_T_user"
                 android:layout_width="250sp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/customer_edittext"
+                android:drawableStart="@drawable/ic_tipouser"
+                android:drawablePadding="8sp"
+                android:hint="Digite el tipo usuario"
+                android:inputType="text"
+                android:padding="8sp"
+                android:textColorHint="#EA9C89" />
+            <!--
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="55sp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginLeft="27sp"
+                            android:layout_maRight="27sp"
+                            android:orientation="horizontal">
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/rojo"
+                                android:hint="@string/tipo_de_usuario"
+                                app:startIconDrawable="@drawable/ic_tipouser">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/Auto_Comp_TipoUsuario"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="none" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+                        -->
+
+            <EditText
+                android:id="@+id/edit_pass"
+                android:layout_width="250sp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_margin="12dp"
                 android:background="@drawable/customer_edittext"
                 android:drawableStart="@drawable/ic_pssperson"
                 android:drawablePadding="8sp"
@@ -138,7 +155,7 @@
         android:layout_width="240dp"
         android:layout_height="65dp"
         android:layout_gravity="center"
-        android:layout_marginVertical="10dp"
+        android:layout_marginVertical="12dp"
         android:backgroundTint="#f00"
         android:drawableLeft="@drawable/ic_registro"
         android:text="@string/registrar_usuario"
