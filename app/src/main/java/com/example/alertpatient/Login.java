@@ -24,6 +24,7 @@ public class Login extends AppCompatActivity {
     //Las cajas de textos..........
     EditText user;
     EditText pass;
+    EditText t_user;
     //-----------
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class Login extends AppCompatActivity {
         //Inicialiazando las cajas de textos
         user = findViewById(R.id.text_user);
         pass = findViewById(R.id.text_pass);
+        t_user = findViewById(R.id.t_user);
         //---------------------
 
         dao = new daoUsuario(this);
@@ -47,12 +49,13 @@ public class Login extends AppCompatActivity {
         btn_ingresar.setOnClickListener(view -> {
              String u = user.getText().toString();
              String p = pass.getText().toString();
+             String tuser = t_user.getText().toString();
 
              //Validar campos vacios
             if(u.equals("") && p.equals("")){
                 Toast.makeText(this, "Error: Campos Vacios!", Toast.LENGTH_SHORT).show();
-            } else if(dao.login(u, p) == 1){
-                Toast.makeText(this, "Bienvenido: "+dao.getUser(u, p).getNombre().toString(), Toast.LENGTH_SHORT).show();
+            } else if(dao.login(u, p, tuser) == 1){
+                Toast.makeText(this, "Bienvenido: "+dao.getUser(u, p, tuser).getNombre().toString(), Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(Login.this, Principal.class);
                 startActivity(i);
                 finish();

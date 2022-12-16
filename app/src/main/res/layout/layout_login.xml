@@ -62,6 +62,21 @@
                 android:textColorHint="#F1876D"
                 tools:ignore="TextContrastCheck" />
 
+            <EditText
+                android:id="@+id/t_user"
+                android:layout_width="match_parent"
+                android:layout_height="51sp"
+                android:background="@drawable/customer_edittext"
+                android:drawableLeft="@drawable/ic_tipouser"
+                android:ems="15"
+                android:layout_marginVertical="20dp"
+                android:hint="@string/tipo_de_usuario"
+                android:inputType="text"
+                android:drawablePadding="8sp"
+                android:padding="8sp"
+                android:textColorHint="#F1876D"
+                tools:ignore="TextContrastCheck" />
+
 
             <Button
                 android:id="@+id/btn_ingresar"
