@@ -41,13 +41,12 @@ public class daoUsuario {
     }
 
     //Metodo Login
-    public int login(String u, String p, String t_user){
+    public int login(String u, String p){
         int i = 0;
         Cursor cr = sql.rawQuery("select * from usuario", null);
         if (cr != null && cr.moveToFirst()) {
             do{
-                if(cr.getString(1).equals(u) && cr.getString(6).equals(p)
-                        && cr.getString(7).equals(t_user)) {
+                if(cr.getString(1).equals(u) && cr.getString(6).equals(p)) {
                     i++;
                 }
             }while(cr.moveToNext());
@@ -56,10 +55,10 @@ public class daoUsuario {
         return i;
     }
 
-    public Usuario getUser(String u, String p, String t_user){
+    public Usuario getUser(String u, String p){
         list = selectUsuarios();
         for (Usuario us: list) {
-            if(us.getCorreo().equals(u) && us.getPass().equals(p)  && us.getT_user().equals(t_user)){
+            if(us.getCorreo().equals(u) && us.getPass().equals(p)){
                 return us;
             }
 

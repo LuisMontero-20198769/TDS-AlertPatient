@@ -28,7 +28,7 @@ public class Emergencia extends AppCompatActivity {
         btn_emergencias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:8099630662"));
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:911"));
                 startActivity(intent);
             }
         });

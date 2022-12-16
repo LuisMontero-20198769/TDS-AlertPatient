@@ -116,7 +116,8 @@
                 android:id="@+id/RbOpcion_No_E"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No" />
+                android:text="No"
+                tools:ignore="TouchTargetSizeCheck" />
         </RadioGroup>
 
     </LinearLayout>

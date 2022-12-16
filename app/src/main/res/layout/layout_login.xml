@@ -22,7 +22,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="30dp"
         android:background="@drawable/customer_edittext"
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
@@ -33,7 +33,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="20sp"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="5dp">
 
             <EditText
                 android:id="@+id/text_user"
@@ -62,20 +62,6 @@
                 android:textColorHint="#F1876D"
                 tools:ignore="TextContrastCheck" />
 
-            <EditText
-                android:id="@+id/t_user"
-                android:layout_width="match_parent"
-                android:layout_height="51sp"
-                android:background="@drawable/customer_edittext"
-                android:drawableLeft="@drawable/ic_tipouser"
-                android:ems="15"
-                android:layout_marginVertical="20dp"
-                android:hint="@string/tipo_de_usuario"
-                android:inputType="text"
-                android:drawablePadding="8sp"
-                android:padding="8sp"
-                android:textColorHint="#F1876D"
-                tools:ignore="TextContrastCheck" />
 
 
             <Button
@@ -98,7 +84,7 @@
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10sp"
+        android:layout_margin="20sp"
         android:layout_gravity="center">
 
         <TableRow>

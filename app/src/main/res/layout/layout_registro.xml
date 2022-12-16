@@ -153,9 +153,9 @@
     <Button
         android:id="@+id/btn_registrar"
         android:layout_width="240dp"
-        android:layout_height="65dp"
+        android:layout_height="60dp"
         android:layout_gravity="center"
-        android:layout_marginVertical="12dp"
+        android:layout_marginVertical="5dp"
         android:backgroundTint="#f00"
         android:drawableLeft="@drawable/ic_registro"
         android:text="@string/registrar_usuario"
@@ -164,7 +164,7 @@
     <Button
         android:id="@+id/btn_cancelar_registro"
         android:layout_width="240dp"
-        android:layout_height="65dp"
+        android:layout_height="60dp"
         android:layout_gravity="center"
         android:backgroundTint="#f00"
         android:drawableLeft="@drawable/ic_cancelar"

@@ -29,6 +29,7 @@
         <activity
             android:name=".Principal"
             android:theme="@style/principal" />
+
         <activity android:name=".Alarmas"
             android:exported="true">
             <intent-filter>
