@@ -1,108 +1,101 @@
 package com.example.alertpatient;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.AlarmClock;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.TimePicker;
+import android.widget.EditText;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Calendar;
 
-public class Alarmas extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class Alarmas extends AppCompatActivity  {
 
-    AlarmManager alarmManager;
-    TimePicker alarm_timePicker;
-    TextView alarm_state;
-    Context context;
-    PendingIntent pending_Intent;
-    int sound_select;
+    //EditText
+    EditText text_nombre, text_hora, text_minutos, text_dia;
+
+    //Botones
+    Button btn_establecer, btn_cancelar, btn_salirApp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_alarma);
 
-        final AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-        final TimePicker alam_TimePicker = (TimePicker) findViewById(R.id.timePicker);
-        final TextView alarm_state = (TextView) findViewById(R.id.alarm_state);
+        //Referencias
+        text_nombre = (EditText) findViewById(R.id.text_recordar);
+        text_hora = (EditText) findViewById(R.id.text_hora);
+        text_minutos = (EditText) findViewById(R.id.text_minutos);
+        text_dia = (EditText) findViewById(R.id.text_dia);
 
-        final Calendar calendar = Calendar.getInstance();
+        btn_establecer = (Button) findViewById(R.id.btn_establecer);
+        btn_cancelar = (Button) findViewById(R.id.btn_cancelarAlarm);
+        btn_salirApp = (Button) findViewById(R.id.btn_salirApp);
 
-        final Intent my_intent = new Intent( Alarmas.this, AlarmReceiver.class);
+        //-------
 
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource
-                (this, R.array.stepbrothers_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
 
-        Button alarm_on = (Button) findViewById(R.id.alarm_on);
-        alarm_on.setOnClickListener(new View.OnClickListener() {
+        //Acciones....
+        btn_establecer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calendar.set(Calendar.HOUR_OF_DAY, alarm_timePicker.getHour());
-                calendar.set(Calendar.MINUTE, alarm_timePicker.getMinute());
-
-                int hour = alam_TimePicker.getHour();
-                int minute = alam_TimePicker.getMinute();
-
-                String hour_string = String.valueOf(hour);
-                String minute_string = String.valueOf(minute);
-
-                if(hour > 12) hour_string = String.valueOf(hour - 12);
-                if(minute < 10) minute_string = "0" + String.valueOf(minute);
-
-                alarm_state.setText("Alarma establecida en: " + hour_string + ":" + minute_string);
-
-                my_intent.putExtra("extra", "alarma encendida");
-
-                my_intent.putExtra("sound_choice", sound_select);
-
-                pending_Intent = PendingIntent.getBroadcast
-                        (Alarmas.this, 0, my_intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-                alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_Intent);
-
+                String nombre = text_nombre.getText().toString();
+                int hora = Integer.parseInt(text_hora.getText().toString());
+                int minutos = Integer.parseInt(text_minutos.getText().toString());
+                String dia = text_dia.getText().toString();
+                establecerAlarma(nombre, hora, minutos, dia);
             }
         });
 
-        Button alarm_off = (Button) findViewById(R.id.alarm_off);
-        alarm_off.setOnClickListener(new View.OnClickListener() {
+        btn_cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                alarm_state.setText("Alarm Apadada");
-
-                alarmManager.cancel(pending_Intent);
-
-                my_intent.putExtra("extra", "alarma apagada");
-
-                my_intent.putExtra("sound_choice", sound_select);
-
-                sendBroadcast(my_intent);
+                Intent principal = new Intent(Alarmas.this, Principal.class);
+                startActivity(principal);
+                finish();
+            }
+        });
+        btn_salirApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cerrarAplicacion();
             }
         });
 
 
 
-
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+    private void cerrarAplicacion() {
+        new AlertDialog.Builder(Alarmas.this)
+                .setTitle("¿Realmente desea cerrar la aplicación?")
+                .setCancelable(false)
+                .setNegativeButton(android.R.string.cancel, null)
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {// un listener que al pulsar, cierre la aplicacion
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        android.os.Process.killProcess(android.os.Process.myPid()); //Su funcion es algo
+                        // similar a lo que se llama cuando se presiona el botón "Forzar Detención" o "Administrar aplicaciones", lo cuál mata la aplicación
+                        finishAffinity ();//cerrara esta actividad...
+                    }
+                }).show();
     }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
+    public void establecerAlarma(String mensaje, int hora, int minutos, String dia){
+         Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM)
+                 .putExtra(AlarmClock.EXTRA_MESSAGE, mensaje)
+                 .putExtra(AlarmClock.EXTRA_HOUR, hora)
+                 .putExtra(AlarmClock.EXTRA_MINUTES, minutos)
+                 .putExtra(AlarmClock.EXTRA_DAYS, dia);
 
+
+         if(intent.resolveActivity(getPackageManager()) != null){
+             startActivity(intent);
+         }
     }
+
 }

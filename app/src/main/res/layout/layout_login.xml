@@ -57,6 +57,7 @@
                 android:ems="15"
                 android:hint="@string/password"
                 android:inputType="textPassword"
+                android:drawablePadding="8sp"
                 android:padding="8sp"
                 android:textColorHint="#F1876D"
                 tools:ignore="TextContrastCheck" />

@@ -1,64 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="15sp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10sp"
     android:background="@drawable/img_7"
     android:orientation="vertical">
-    
-    <TimePicker
-        android:id="@+id/timePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"/>
-    
-    <Button
-        android:id="@+id/alarm_on"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/alarm_state"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="5dp"
-        android:text="Iniciar"
-        android:textSize="18dp"/>
 
-    <Button
-        android:id="@+id/alarm_off"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/alarm_state"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="5dp"
-        android:text="Detener"
-        android:textSize="18dp"/>
 
-    <TextView
-        android:id="@+id/alarm_state"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/timePicker"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="10dp"
-        android:textColor="@color/rojo"
-        android:text="Selecciona una opcion: "
-        android:textSize="25dp"/>
 
-    <Spinner
-        android:id="@+id/spinner"
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="18dp"/>
+        android:layout_margin="8dp"
+        android:background="@drawable/customer_edittext"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="18sp"
+            android:orientation="vertical"
+            android:padding="10dp">
 
 
+            <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="0sp"
+            android:src="@drawable/img"
+            android:contentDescription="TODO" />
+
+            <EditText
+                android:id="@+id/text_recordar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginVertical="15dp"
+                android:background="@drawable/customer_edittext"
+                android:drawableLeft="@drawable/ic_recordar"
+                android:drawablePadding="8sp"
+                android:hint="Recordatorio...."
+                android:padding="8sp"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/text_hora"
+                android:layout_width="match_parent"
+                android:layout_height="51sp"
+                android:background="@drawable/customer_edittext"
+                android:drawableLeft="@drawable/ic_hora"
+                android:ems="15"
+                android:drawablePadding="8sp"
+                android:hint="Hora a establecer ..."
+                android:inputType="number"
+                android:padding="8sp"
+
+               />
+
+            <EditText
+                android:id="@+id/text_minutos"
+                android:layout_width="match_parent"
+                android:layout_height="51sp"
+                android:background="@drawable/customer_edittext"
+                android:drawableLeft="@drawable/ic_minutos"
+                android:layout_marginTop="15sp"
+                android:ems="15"
+                android:hint="Minutos ...."
+                android:drawablePadding="8sp"
+                android:inputType="number"
+                android:padding="8sp"
+                />
+
+            <EditText
+                android:id="@+id/text_dia"
+                android:layout_width="match_parent"
+                android:layout_height="51sp"
+                android:background="@drawable/customer_edittext"
+                android:drawableLeft="@drawable/ic_edad"
+                android:layout_marginTop="15sp"
+                android:ems="15"
+                android:hint="Dia ...."
+                android:drawablePadding="8sp"
+                android:inputType="text"
+                android:padding="8sp"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_establecer"
+                    android:layout_width="155dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginRight="5dp"
+                    android:backgroundTint="#f00"
+                    android:drawableRight="@drawable/ic_send"
+                    android:text="Establecer"
+                    android:textSize="12sp"
+                    app:cornerRadius="30dp"
+                    />
+
+                <Button
+                    android:id="@+id/btn_cancelarAlarm"
+                    android:layout_width="155dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10sp"
+                    android:backgroundTint="#f00"
+                    android:drawableRight="@drawable/ic_cancelar"
+                    android:text="Cancelar"
+                    android:textSize="12sp"
+                    app:cornerRadius="30dp" />
+
+            </LinearLayout>
 
 
+        </LinearLayout>
 
+    </androidx.cardview.widget.CardView>
 
+    <Button
+        android:id="@+id/btn_salirApp"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_gravity="end"
+        android:layout_marginRight="20sp"
+        android:layout_marginTop="3sp"
+        android:backgroundTint="#f00"
+        android:drawableRight="@drawable/ic_salir"
+        android:text="Salir"
+        android:textSize="15sp"
+        app:cornerRadius="30dp" />
 
-</RelativeLayout>
+</LinearLayout>
