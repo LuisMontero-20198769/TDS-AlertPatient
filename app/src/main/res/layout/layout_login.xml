@@ -72,6 +72,7 @@
                 android:backgroundTint="#f00"
                 android:drawableLeft="@drawable/ic_enter"
                 android:text="Ingresar"
+                android:textStyle="bold"
                 android:textSize="15sp"
                 app:cornerRadius="30dp" />
 
@@ -92,6 +93,7 @@
                 android:layout_width="160dp"
                 android:layout_height="65dp"
                 android:layout_gravity="center"
+                android:textStyle="bold"
                 android:backgroundTint="#f00"
                 android:drawableLeft="@drawable/ic_addperson"
                 android:text="Crear Usuario"
@@ -105,6 +107,7 @@
                 android:backgroundTint="#f00"
                 android:drawableEnd="@drawable/ic_salir"
                 android:text="@string/salir"
+                android:textStyle="bold"
                 app:cornerRadius="30dp" />
         </TableRow>
     </TableLayout>

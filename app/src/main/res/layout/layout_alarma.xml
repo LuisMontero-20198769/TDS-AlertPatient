@@ -13,7 +13,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_margin="15dp"
         android:background="@drawable/customer_edittext"
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
@@ -22,9 +22,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="18sp"
+            android:layout_margin="12sp"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="8dp">
 
 
             <ImageView
@@ -33,7 +33,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="0sp"
             android:src="@drawable/img"
-            android:contentDescription="TODO" />
+            android:contentDescription="@string/todo" />
 
             <EditText
                 android:id="@+id/text_recordar"
@@ -45,7 +45,8 @@
                 android:drawablePadding="8sp"
                 android:hint="Recordatorio...."
                 android:padding="8sp"
-                android:inputType="text" />
+                android:inputType="text"
+                android:autofillHints="" />
 
             <EditText
                 android:id="@+id/text_hora"
@@ -92,11 +93,12 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_gravity="center">
 
                 <Button
                     android:id="@+id/btn_establecer"
-                    android:layout_width="155dp"
+                    android:layout_width="148dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="10sp"
@@ -106,11 +108,12 @@
                     android:text="Establecer"
                     android:textSize="12sp"
                     app:cornerRadius="30dp"
+                    android:textStyle="bold"
                     />
 
                 <Button
                     android:id="@+id/btn_cancelarAlarm"
-                    android:layout_width="155dp"
+                    android:layout_width="150dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="10sp"
@@ -118,7 +121,8 @@
                     android:drawableRight="@drawable/ic_cancelar"
                     android:text="Cancelar"
                     android:textSize="12sp"
-                    app:cornerRadius="30dp" />
+                    app:cornerRadius="30dp"
+                    android:textStyle="bold"/>
 
             </LinearLayout>
 
@@ -138,6 +142,7 @@
         android:drawableRight="@drawable/ic_salir"
         android:text="Salir"
         android:textSize="15sp"
+        android:textStyle="bold"
         app:cornerRadius="30dp" />
 
 </LinearLayout>

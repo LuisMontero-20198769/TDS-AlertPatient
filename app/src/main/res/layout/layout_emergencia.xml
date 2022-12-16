@@ -43,6 +43,7 @@
     android:layout_width="160sp"
     android:layout_height="60sp"
     android:layout_margin="10sp"
+        android:textStyle="bold"
     app:cornerRadius="30dp"
         android:layout_gravity="right"
     android:text="Cancelar"

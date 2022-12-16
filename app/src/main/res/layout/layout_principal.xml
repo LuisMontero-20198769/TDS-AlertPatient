@@ -98,7 +98,8 @@
                 android:layout_marginTop="10sp"
                 android:backgroundTint="#f00"
                 android:drawableLeft="@drawable/ic_back"
-                android:text="Atras"
+                android:text="@string/atras"
+                android:textStyle="bold"
                 app:cornerRadius="30dp" />
 
             <Button
@@ -106,6 +107,7 @@
                 android:layout_width="160sp"
                 android:layout_height="65sp"
                 android:layout_marginTop="10sp"
+                android:textStyle="bold"
                 android:layout_marginLeft="12sp"
                 android:backgroundTint="#f00"
                 android:drawableEnd="@drawable/ic_salir"
