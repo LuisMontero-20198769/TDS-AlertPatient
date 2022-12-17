@@ -2,13 +2,96 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/img_7">
 
-    <TextView
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:layout_margin="30dp"
+        android:background="@drawable/customer_edittext"
+        app:cardCornerRadius="30sp"
+        app:cardElevation="20sp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center"
+                android:layout_marginVertical="30dp"
+                android:src="@drawable/img_adminof" />
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="230sp"
+                android:layout_margin="8sp"
+                android:stretchColumns="1">
+
+                <TableRow
+                    android:background="@drawable/customer_edittext"
+                    android:layout_margin="5sp">
+
+                    <ImageButton
+                        android:id="@+id/Ibtn_consultaVer"
+                        android:layout_width="140sp"
+                        android:layout_height="95sp"
+                        android:layout_margin="10sp"
+                        android:background="@drawable/img_verconsultas"
+                        />
+
+                    <ImageButton
+                        android:id="@+id/Ibtn_agregarMedicamentos"
+                        android:layout_width="100sp"
+                        android:layout_height="95sp"
+                        android:layout_margin="10sp"
+                        android:paddingRight="2sp"
+                        android:background="@drawable/img_addmedic"
+                      />
+                </TableRow>
+
+            </TableLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <TableLayout
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Admin"
-        android:textSize="25sp"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_height="wrap_content">
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btn_atrasAdmin"
+                android:layout_width="160sp"
+                android:layout_height="65sp"
+                android:backgroundTint="#f00"
+                android:drawableLeft="@drawable/ic_back"
+                android:text="@string/atras"
+                android:textStyle="bold"
+                app:cornerRadius="30dp" />
+
+            <Button
+                android:id="@+id/btn_salirAdmin"
+                android:layout_width="160sp"
+                android:layout_height="65sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="12sp"
+                android:backgroundTint="#f00"
+                android:drawableEnd="@drawable/ic_salir"
+                android:text="@string/txt_salir"
+                app:cornerRadius="30dp" />
+        </TableRow>
+    </TableLayout>
+
+
 
 </LinearLayout>

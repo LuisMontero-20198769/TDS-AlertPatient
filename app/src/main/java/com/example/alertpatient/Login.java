@@ -112,7 +112,8 @@ public class Login extends AppCompatActivity {
         btn_salir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 cerrarAplicacion();
+
+                cerrarAplicacion();
             }
         });
 
@@ -127,7 +128,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         android.os.Process.killProcess(android.os.Process.myPid()); //Su funcion es algo similar a lo que se llama cuando se presiona el botón "Forzar Detención" o "Administrar aplicaciones", lo cuál mata la aplicación
-                        finishAffinity (); //cerrara esta actividad...
+                        finish (); //cerrara esta actividad...
                     }
                 }).show();
     }

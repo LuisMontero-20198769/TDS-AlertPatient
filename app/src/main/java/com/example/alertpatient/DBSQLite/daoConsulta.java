@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 
-public class daoConsulta {
+public class  daoConsulta {
     Context c;
     BD_Consulta cons;
     ArrayList<BD_Consulta> list;

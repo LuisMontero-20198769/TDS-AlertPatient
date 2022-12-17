@@ -32,7 +32,7 @@
             android:layout_height="150dp"
             android:layout_gravity="center"
             android:layout_marginTop="0sp"
-            android:src="@drawable/img"
+            android:src="@drawable/icono_alarma"
             android:contentDescription="@string/todo" />
 
             <EditText
